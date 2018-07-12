@@ -33,7 +33,7 @@ const beads = [
 	color: 'gray/clear',
 	price: '$1.00',
 	shape: 'oval',
-	image: 'http://localhost:3000/photos/20180708_164320.jpg',
+	image: 'http://localhost:3000/photos/20180708_164320.png',
 	_id: 1
 
 
@@ -49,7 +49,7 @@ const beads = [
 	color: 'gray/clear',
 	price: '$0.30',
 	shape: 'teardrop',
-	image: 'http://localhost:3000/photos/20180708_164525.jpg',
+	image: 'http://localhost:3000/photos/20180708_164525.png',
 	_id: 2
 
 
@@ -65,7 +65,7 @@ const beads = [
 	color: 'gray/clear',
 	price: '$0.35',
 	shape: 'tube',
-	image: 'http://localhost:3000/photos/20180708_164816.jpg',
+	image: 'http://localhost:3000/photos/20180708_164816.png',
 	_id: 3
 
 
@@ -81,7 +81,7 @@ const beads = [
 	color: 'blue',
 	price: '$0.15',
 	shape: 'cube',
-	image: 'http://localhost:3000/photos/20180708_165551.jpg',
+	image: 'http://localhost:3000/photos/20180708_165551.png',
 	_id: 4
 
 
@@ -97,7 +97,7 @@ const beads = [
 	color: 'blue',
 	price: '$0.40',
 	shape: 'round',
-	image: 'http://localhost:3000/photos/20180708_165624.jpg',
+	image: 'http://localhost:3000/photos/20180708_165624.png',
 	_id: 5
 
 
@@ -113,7 +113,7 @@ const beads = [
 	color: 'blue',
 	price: '$0.75 per bead',
 	shape: 'block',
-	image: 'http://localhost:3000/photos/20180708_165855.jpg',
+	image: 'http://localhost:3000/photos/20180708_165855.png',
 	_id: 6
 
 
@@ -129,7 +129,7 @@ const beads = [
 	color: 'black',
 	price: '$0.50 per bead',
 	shape: 'tube',
-	image: 'http://localhost:3000/photos/20180708_170214.jpg',
+	image: 'http://localhost:3000/photos/20180708_170214.png',
 	_id: 7
 
 },
@@ -142,7 +142,7 @@ const beads = [
 	color: 'black',
 	price: '$3 per pendant',
 	shape: 'drop',
-	image: 'http://localhost:3000/photos/20180708_170446.jpg',
+	image: 'http://localhost:3000/photos/20180708_170446.png',
 	_id: 8
 
 },
@@ -155,7 +155,7 @@ const beads = [
 	color: 'black',
 	price: '$0.35 per bead',
 	shape: 'barrel',
-	image: 'http://localhost:3000/photos/20180708_170753.jpg',
+	image: 'http://localhost:3000/photos/20180708_170753.png',
 	_id: 9
 
 },
@@ -168,7 +168,7 @@ const beads = [
 	color: 'black',
 	price: '$0.05 per bead',
 	shape: 'chips',
-	image: 'http://localhost:3000/photos/20180708_171254.jpg',
+	image: 'http://localhost:3000/photos/20180708_171254.png',
 	_id: 10
 
 },
@@ -694,6 +694,7 @@ const beads = [
 	_id: 50
 
 }]
+
 
 router.get('/beads', (req, res) => {
 catalog.find({}).exec(function(err, beads) {
