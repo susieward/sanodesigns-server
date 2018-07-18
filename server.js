@@ -24,6 +24,7 @@ app.use('/', router);
 
 router.use('/photos', express.static(__dirname + '/photos'));
 
+
 const beads = [
 {
 
@@ -34,7 +35,7 @@ const beads = [
 	price: '$1.00',
 	shape: 'oval',
 	image: 'http://localhost:3000/photos/20180708_164320.png',
-	_id: 1
+	_id: '01'
 
 
 
@@ -50,7 +51,7 @@ const beads = [
 	price: '$0.30',
 	shape: 'teardrop',
 	image: 'http://localhost:3000/photos/20180708_164525.png',
-	_id: 2
+	_id: '02'
 
 
 
@@ -66,7 +67,7 @@ const beads = [
 	price: '$0.35',
 	shape: 'tube',
 	image: 'http://localhost:3000/photos/20180708_164816.png',
-	_id: 3
+	_id: '03'
 
 
 
@@ -82,7 +83,7 @@ const beads = [
 	price: '$0.15',
 	shape: 'cube',
 	image: 'http://localhost:3000/photos/20180708_165551.png',
-	_id: 4
+	_id: '04'
 
 
 
@@ -98,7 +99,7 @@ const beads = [
 	price: '$0.40',
 	shape: 'round',
 	image: 'http://localhost:3000/photos/20180708_165624.png',
-	_id: 5
+	_id: '05'
 
 
 
@@ -114,7 +115,7 @@ const beads = [
 	price: '$0.75 per bead',
 	shape: 'block',
 	image: 'http://localhost:3000/photos/20180708_165855.png',
-	_id: 6
+	_id: '06'
 
 
 
@@ -130,7 +131,7 @@ const beads = [
 	price: '$0.50 per bead',
 	shape: 'tube',
 	image: 'http://localhost:3000/photos/20180708_170214.png',
-	_id: 7
+	_id: '07'
 
 },
 
@@ -143,7 +144,7 @@ const beads = [
 	price: '$3 per pendant',
 	shape: 'drop',
 	image: 'http://localhost:3000/photos/20180708_170446.png',
-	_id: 8
+	_id: '08'
 
 },
 
@@ -156,7 +157,7 @@ const beads = [
 	price: '$0.35 per bead',
 	shape: 'barrel',
 	image: 'http://localhost:3000/photos/20180708_170753.png',
-	_id: 9
+	_id: '09'
 
 },
 
@@ -169,7 +170,7 @@ const beads = [
 	price: '$0.05 per bead',
 	shape: 'chips',
 	image: 'http://localhost:3000/photos/20180708_171254.png',
-	_id: 10
+	_id: '10'
 
 },
 
@@ -181,8 +182,8 @@ const beads = [
 	color: 'black/gray',
 	price: '$0.50 per bead',
 	shape: 'round',
-	image: 'http://localhost:3000/photos/20180708_171647.jpg',
-	_id: 11
+	image: 'http://localhost:3000/photos/20180708_171647.png',
+	_id: '11'
 
 },
 
@@ -194,8 +195,8 @@ const beads = [
 	color: 'black/gray',
 	price: '$0.50 per bead',
 	shape: 'tube',
-	image: 'http://localhost:3000/photos/20180708_171825.jpg',
-	_id: 12
+	image: 'http://localhost:3000/photos/20180708_171825.png',
+	_id: '12'
 
 },
 
@@ -207,8 +208,8 @@ const beads = [
 	color: 'black/gray',
 	price: '$0.75 per bead',
 	shape: 'block',
-	image: 'http://localhost:3000/photos/20180708_172023.jpg',
-	_id: 13
+	image: 'http://localhost:3000/photos/20180708_172023.png',
+	_id: '13'
 
 },
 
@@ -220,8 +221,8 @@ const beads = [
 	color: 'silver',
 	price: '$0.20 per bead',
 	shape: 'cube',
-	image: 'http://localhost:3000/photos/20180708_172235.jpg',
-	_id: 14
+	image: 'http://localhost:3000/photos/20180708_172235.png',
+	_id: '14'
 
 },
 
@@ -233,8 +234,8 @@ const beads = [
 	color: 'silver',
 	price: '$0.20 per bead',
 	shape: 'round',
-	image: 'http://localhost:3000/photos/20180708_172558.jpg',
-	_id: 15
+	image: 'http://localhost:3000/photos/20180708_172558.png',
+	_id: '15'
 
 },
 
@@ -246,8 +247,8 @@ const beads = [
 	color: 'silver',
 	price: '$3 per donut',
 	shape: 'donut',
-	image: 'http://localhost:3000/photos/20180709_114309.jpg',
-	_id: 16
+	image: 'http://localhost:3000/photos/20180709_114309.png',
+	_id: '16'
 
 },
 
@@ -260,8 +261,8 @@ const beads = [
 	color: 'clear',
 	price: '$5 per pendant',
 	shape: 'heart',
-	image: 'http://localhost:3000/photos/20180708_174019.jpg',
-	_id: 17
+	image: 'http://localhost:3000/photos/20180708_174019.png',
+	_id: '17'
 
 },
 
@@ -274,8 +275,8 @@ const beads = [
 	color: 'clear',
 	price: '$0.70 per bead',
 	shape: 'round',
-	image: 'http://localhost:3000/photos/20180708_174157.jpg',
-	_id: 18
+	image: 'http://localhost:3000/photos/20180708_174157.png',
+	_id: '18'
 
 },
 
@@ -288,8 +289,8 @@ const beads = [
 	color: 'clear',
 	price: '$0.45 per bead',
 	shape: 'round',
-	image: 'http://localhost:3000/photos/20180708_174407.jpg',
-	_id: 19
+	image: 'http://localhost:3000/photos/20180708_174407.png',
+	_id: '19'
 
 },
 
@@ -301,8 +302,8 @@ const beads = [
 	color: 'clear',
 	price: '$0.60',
 	shape: 'flat teardrop',
-	image: 'http://localhost:3000/photos/20180708_174735.jpg',
-	_id: 20
+	image: 'http://localhost:3000/photos/20180708_174735.png',
+	_id: '20'
 
 },
 
@@ -314,8 +315,8 @@ const beads = [
 	color: 'clear',
 	price: '$0.50',
 	shape: 'teardrop',
-	image: 'http://localhost:3000/photos/20180708_174956.jpg',
-	_id: 21
+	image: 'http://localhost:3000/photos/20180708_174956.png',
+	_id: '21'
 
 },
 
@@ -327,8 +328,8 @@ const beads = [
 	color: 'clear',
 	price: '$0.30',
 	shape: 'rondelle',
-	image: 'http://localhost:3000/photos/20180708_175148.jpg',
-	_id: 22
+	image: 'http://localhost:3000/photos/20180708_175148.png',
+	_id: '22'
 
 },
 
@@ -340,8 +341,8 @@ const beads = [
 	color: 'white/clear',
 	price: '$0.40 per bead',
 	shape: 'tube',
-	image: 'http://localhost:3000/photos/20180708_175617.jpg',
-	_id: 23
+	image: 'http://localhost:3000/photos/20180708_175617.png',
+	_id: '23'
 
 },
 
@@ -353,8 +354,8 @@ const beads = [
 	color: 'white/clear',
 	price: '$0.80 per bead',
 	shape: 'teardrop',
-	image: 'http://localhost:3000/photos/20180708_180002.jpg',
-	_id: 24
+	image: 'http://localhost:3000/photos/20180708_180002.png',
+	_id: '24'
 
 },
 
@@ -366,8 +367,8 @@ const beads = [
 	color: 'white/clear',
 	price: '$0.10 per bead',
 	shape: 'rondelle',
-	image: 'http://localhost:3000/photos/20180709_114423.jpg',
-	_id: 25
+	image: 'http://localhost:3000/photos/20180709_114423.png',
+	_id: '25'
 
 },
 
@@ -379,8 +380,8 @@ const beads = [
 	color: 'white/clear',
 	price: '$0.60',
 	shape: 'oval',
-	image: 'http://localhost:3000/photos/20180709_114704.jpg',
-	_id: 26
+	image: 'http://localhost:3000/photos/20180709_114704.png',
+	_id: '26'
 
 },
 
@@ -392,8 +393,8 @@ const beads = [
 	color: 'green/silver/gold',
 	price: '$1 per bead',
 	shape: 'round',
-	image: 'http://localhost:3000/photos/20180709_115202.jpg',
-	_id: 27
+	image: 'http://localhost:3000/photos/20180709_115202.png',
+	_id: '27'
 
 },
 
@@ -405,8 +406,8 @@ const beads = [
 	color: 'pink',
 	price: '$0.15 per bead',
 	shape: 'round',
-	image: 'http://localhost:3000/photos/20180709_115441.jpg',
-	_id: 28
+	image: 'http://localhost:3000/photos/20180709_115441.png',
+	_id: '28'
 
 },
 
@@ -418,8 +419,8 @@ const beads = [
 	color: 'pink',
 	price: '$0.35 per bead',
 	shape: 'round',
-	image: 'http://localhost:3000/photos/20180709_115559.jpg',
-	_id: 29
+	image: 'http://localhost:3000/photos/20180709_115559.png',
+	_id: '29'
 
 },
 
@@ -431,8 +432,8 @@ const beads = [
 	color: 'pink',
 	price: '$0.20 per bead',
 	shape: 'slab',
-	image: 'http://localhost:3000/photos/20180709_120038.jpg',
-	_id: 30
+	image: 'http://localhost:3000/photos/20180709_120038.png',
+	_id: '30'
 
 },
 
@@ -444,8 +445,8 @@ const beads = [
 	color: 'pink',
 	price: '$0.25 per bead',
 	shape: 'oval',
-	image: 'http://localhost:3000/photos/20180709_120942.jpg',
-	_id: 31
+	image: 'http://localhost:3000/photos/20180709_120942.png',
+	_id: '31'
 
 },
 
@@ -457,8 +458,8 @@ const beads = [
 	color: 'gold/silver',
 	price: '$0.40 per bead',
 	shape: 'chunk',
-	image: 'http://localhost:3000/photos/20180709_121518.jpg',
-	_id: 32
+	image: 'http://localhost:3000/photos/20180709_121518.png',
+	_id: '32'
 
 },
 
@@ -470,8 +471,8 @@ const beads = [
 	color: 'gold/silver',
 	price: '$1.15 per bead',
 	shape: 'flat oval',
-	image: 'http://localhost:3000/photos/20180709_121646.jpg',
-	_id: 33
+	image: 'http://localhost:3000/photos/20180709_121646.png',
+	_id: '33'
 
 },
 
@@ -483,8 +484,8 @@ const beads = [
 	color: 'red/orange',
 	price: '$0.50 per bead',
 	shape: 'square chunk',
-	image: 'http://localhost:3000/photos/20180709_122159.jpg',
-	_id: 34
+	image: 'http://localhost:3000/photos/20180709_122159.png',
+	_id: '34'
 
 },
 
@@ -496,8 +497,8 @@ const beads = [
 	color: 'red/orange/clear',
 	price: '$0.45 per bead',
 	shape: 'round',
-	image: 'http://localhost:3000/photos/20180709_122351.jpg',
-	_id: 35
+	image: 'http://localhost:3000/photos/20180709_122351.png',
+	_id: '35'
 
 },
 
@@ -509,8 +510,8 @@ const beads = [
 	color: 'orange/red/clear',
 	price: '$0.50 per bead',
 	shape: 'round',
-	image: 'http://localhost:3000/photos/20180709_123105.jpg',
-	_id: 36
+	image: 'http://localhost:3000/photos/20180709_123105.png',
+	_id: '36'
 
 },
 
@@ -522,8 +523,8 @@ const beads = [
 	color: 'red/orange/clear',
 	price: '$0.75 per bead',
 	shape: 'round',
-	image: 'http://localhost:3000/photos/20180709_123404.jpg',
-	_id: 37
+	image: 'http://localhost:3000/photos/20180709_123404.png',
+	_id: '37'
 
 },
 
@@ -535,8 +536,8 @@ const beads = [
 	color: 'red/orange/clear',
 	price: '$0.15 per bead',
 	shape: 'round',
-	image: 'http://localhost:3000/photos/20180709_123543.jpg',
-	_id: 38
+	image: 'http://localhost:3000/photos/20180709_123543.png',
+	_id: '38'
 
 },
 
@@ -548,8 +549,8 @@ const beads = [
 	color: 'red/orange/clear',
 	price: '$0.70 per bead',
 	shape: 'round',
-	image: 'http://localhost:3000/photos/20180709_123843.jpg',
-	_id: 39
+	image: 'http://localhost:3000/photos/20180709_123843.png',
+	_id: '39'
 
 },
 
@@ -561,8 +562,8 @@ const beads = [
 	color: 'red/orange/clear',
 	price: '$0.50 per bead',
 	shape: 'drop',
-	image: 'http://localhost:3000/photos/20180709_124047.jpg',
-	_id: 40
+	image: 'http://localhost:3000/photos/20180709_124047.png',
+	_id: '40'
 
 },
 
@@ -574,8 +575,8 @@ const beads = [
 	color: 'red/orange/clear',
 	price: '$0.15 per bead',
 	shape: 'rondelle',
-	image: 'http://localhost:3000/photos/20180709_124253.jpg',
-	_id: 41
+	image: 'http://localhost:3000/photos/20180709_124253.png',
+	_id: '41'
 
 },
 
@@ -587,8 +588,8 @@ const beads = [
 	color: 'red/orange',
 	price: '$0.20 per bead',
 	shape: 'rondelle',
-	image: 'http://localhost:3000/photos/20180709_124558.jpg',
-	_id: 42
+	image: 'http://localhost:3000/photos/20180709_124558.png',
+	_id: '42'
 
 },
 
@@ -600,8 +601,8 @@ const beads = [
 	color: 'red/orange',
 	price: '$0.35 per bead',
 	shape: 'rectangle tube',
-	image: 'http://localhost:3000/photos/20180709_124758.jpg',
-	_id: 43
+	image: 'http://localhost:3000/photos/20180709_124758.png',
+	_id: '43'
 
 },
 
@@ -613,8 +614,8 @@ const beads = [
 	color: 'red/orange',
 	price: '$0.50',
 	shape: 'slab',
-	image: 'http://localhost:3000/photos/20180709_124957.jpg',
-	_id: 44
+	image: 'http://localhost:3000/photos/20180709_124957.png',
+	_id: '44'
 
 },
 
@@ -626,8 +627,8 @@ const beads = [
 	color: 'red/orange',
 	price: '$0.75',
 	shape: 'barrel',
-	image: 'http://localhost:3000/photos/20180709_125651.jpg',
-	_id: 45
+	image: 'http://localhost:3000/photos/20180709_125651.png',
+	_id: '45'
 },
 
 {
@@ -638,8 +639,8 @@ const beads = [
 	color: 'red/orange',
 	price: '$0.20',
 	shape: 'round',
-	image: 'http://localhost:3000/photos/20180709_125814.jpg',
-	_id: 46
+	image: 'http://localhost:3000/photos/20180709_125814.png',
+	_id: '46'
 
 },
 
@@ -651,8 +652,8 @@ const beads = [
 	color: 'blue/white',
 	price: '$0.20',
 	shape: 'cube',
-	image: 'http://localhost:3000/photos/20180709_130045.jpg',
-	_id: 47
+	image: 'http://localhost:3000/photos/20180709_130045.png',
+	_id: '47'
 
 },
 
@@ -664,8 +665,8 @@ const beads = [
 	color: 'blue/white',
 	price: '$0.95 per bead',
 	shape: 'flat oval',
-	image: 'http://localhost:3000/photos/20180709_130434.jpg',
-	_id: 48
+	image: 'http://localhost:3000/photos/20180709_130434.png',
+	_id: '48'
 
 },
 
@@ -677,8 +678,8 @@ const beads = [
 	color: 'blue/white',
 	price: '$0.35',
 	shape: 'round',
-	image: 'http://localhost:3000/photos/20180709_130634.jpg',
-	_id: 49
+	image: 'http://localhost:3000/photos/20180709_130634.png',
+	_id: '49'
 
 },
 
@@ -690,10 +691,315 @@ const beads = [
 	color: 'blue/white',
 	price: '$0.55',
 	shape: 'round',
-	image: 'http://localhost:3000/photos/20180709_130744.jpg',
-	_id: 50
+	image: 'http://localhost:3000/photos/20180709_130744.png',
+	_id: '50'
 
-}]
+},
+
+{
+
+	stone: 'Amazonite',
+	size: '20 mm',
+	cut: 'smooth',
+	color: 'green/blue/white',
+	price: '$0.70 per bead',
+	shape: 'flat square',
+	image: 'http://localhost:3000/photos/20180709_203458.png',
+	_id: '51'
+
+},
+{
+
+	stone: 'Amazonite',
+	size: '20 mm',
+	cut: 'smooth',
+	color: 'green/blue/white',
+	price: '$0.60 per bead',
+	shape: 'flat rectangle',
+	image: 'http://localhost:3000/photos/20180709_203654.png',
+	_id: '52'
+
+},
+{
+
+	stone: 'Amazonite',
+	size: '14 mm',
+	cut: 'carved',
+	color: 'green/blue/white',
+	price: '$1.15 per bead',
+	shape: 'flower',
+	image: 'http://localhost:3000/photos/20180709_203913.png',
+	_id: '53'
+
+},
+{
+
+	stone: 'Amazonite',
+	size: '8 mm',
+	cut: 'smooth',
+	color: 'green/blue/white',
+	price: '$0.35 per bead',
+	shape: 'round',
+	image: 'http://localhost:3000/photos/20180709_204109.png',
+	_id: '54'
+
+},
+{
+
+	stone: 'Amazonite',
+	size: '10 mm',
+	cut: 'smooth',
+	color: 'green/blue/white',
+	price: '$0.45 per bead',
+	shape: 'round',
+	image: 'http://localhost:3000/photos/20180709_204253.png',
+	_id: '55'
+
+},
+{
+
+	stone: 'Goldstone',
+	size: '4 mm',
+	cut: 'smooth',
+	color: 'orange/brown',
+	price: '$0.30',
+	shape: 'slab',
+	image: 'http://localhost:3000/photos/20180709_204810.png',
+	_id: '56'
+
+},
+{
+
+	stone: 'Goldstone',
+	size: '15 mm',
+	cut: 'smooth',
+	color: 'orange/brown',
+	price: '$2.50 per pendant',
+	shape: 'teardrop pendant',
+	image: 'http://localhost:3000/photos/20180709_205146.png',
+	_id: '57'
+
+},
+{
+
+	stone: 'Goldstone',
+	size: '7 mm',
+	cut: 'smooth',
+	color: 'orange/brown',
+	price: '$0.25 per bead',
+	shape: 'round',
+	image: 'http://localhost:3000/photos/20180709_205536.png',
+	_id: '58'
+
+},
+{
+
+	stone: 'Goldstone',
+	size: '5 mm',
+	cut: 'smooth',
+	color: 'orange/brown',
+	price: '$0.15 per bead',
+	shape: 'round',
+	image: 'http://localhost:3000/photos/20180709_205634.png',
+	_id: '59'
+
+},
+{
+
+	stone: 'Unakite',
+	size: '10 mm',
+	cut: 'smooth',
+	color: 'green/pink',
+	price: '$0.45 per bead',
+	shape: 'flat sphere',
+	image: 'http://localhost:3000/photos/20180709_205930.png',
+	_id: '60'
+
+},
+{
+
+	stone: 'Unakite',
+	size: '6 mm',
+	cut: 'smooth',
+	color: 'green/pink',
+	price: '$0.55',
+	shape: 'rectangular slab',
+	image: 'http://localhost:3000/photos/20180709_210137.png',
+	_id: '61'
+
+},
+{
+
+	stone: 'Unakite',
+	size: '10 mm',
+	cut: 'smooth',
+	color: 'green/pink',
+	price: '$0.35',
+	shape: 'rectangular tube',
+	image: 'http://localhost:3000/photos/20180709_210352.png',
+	_id: '62'
+
+},
+
+{
+
+	stone: 'Unakite',
+	size: '12 mm',
+	cut: 'smooth',
+	color: 'green/pink',
+	price: '$0.60',
+	shape: 'oval',
+	image: 'http://localhost:3000/photos/20180709_210553.png',
+	_id: '63'
+
+},
+
+{
+
+	stone: 'Unakite',
+	size: '6 mm',
+	cut: 'smooth',
+	color: 'green/pink',
+	price: '$0.30 per bead',
+	shape: 'round',
+	image: 'http://localhost:3000/photos/20180709_210729.png',
+	_id: '64'
+
+},
+
+{
+
+	stone: 'Unakite',
+	size: '8 mm',
+	cut: 'smooth',
+	color: 'green/pink',
+	price: '$0.40 per bead',
+	shape: 'round',
+	image: 'http://localhost:3000/photos/20180709_210841.png',
+	_id: '65'
+
+},
+
+{
+
+	stone: 'Unakite',
+	size: '12 mm',
+	cut: 'smooth',
+	color: 'green/pink',
+	price: '$0.70 per bead',
+	shape: 'round',
+	image: 'http://localhost:3000/photos/20180709_211016.png',
+	_id: '66'
+
+},
+
+{
+
+	stone: 'Unakite',
+	size: '3 mm',
+	cut: 'smooth',
+	color: 'green/pink',
+	price: '$0.10',
+	shape: 'rondelle',
+	image: 'http://localhost:3000/photos/20180709_211134.png',
+	_id: '67'
+
+},
+
+{
+
+	stone: 'Black Agate',
+	size: '5 mm',
+	cut: 'smooth',
+	color: 'black',
+	price: '$0.85 per bead',
+	shape: 'rectangular slab',
+	image: 'http://localhost:3000/photos/20180709_211547.png',
+	_id: '68'
+
+},
+
+{
+
+	stone: 'Green Kyanite',
+	size: '4 mm',
+	cut: 'natural',
+	color: 'green',
+	price: '$0.75 per bead',
+	shape: 'natural slab',
+	image: 'http://localhost:3000/photos/20180709_211810.png',
+	_id: '69'
+
+},
+
+{
+
+	stone: 'Garnet',
+	size: '5 mm',
+	cut: 'smooth',
+	color: 'red/purple',
+	price: '$0.40',
+	shape: 'flatdrop',
+	image: 'http://localhost:3000/photos/20180709_212158.png',
+	_id: '70'
+
+},
+
+{
+
+	stone: 'Garnet',
+	size: '3 mm',
+	cut: 'smooth',
+	color: 'red/purple',
+	price: '$0.35',
+	shape: 'flat rectangle',
+	image: 'http://localhost:3000/photos/20180709_212502.png',
+	_id: '71'
+
+},
+
+{
+
+	stone: 'Garnet',
+	size: '6 mm',
+	cut: 'smooth',
+	color: 'red/purple',
+	price: '$0.40',
+	shape: 'flat diamonds',
+	image: 'http://localhost:3000/photos/20180709_212744.png',
+	_id: '72'
+
+},
+
+{
+
+	stone: 'Clear Quartz',
+	size: '8 mm',
+	cut: 'smooth',
+	color: 'clear',
+	price: '$0.35',
+	shape: 'triangle',
+	image: 'http://localhost:3000/photos/20180709_212913.png',
+	_id: '73'
+
+},
+
+{
+
+	stone: 'Agate',
+	size: '16 mm',
+	cut: 'smooth',
+	color: 'gray/white/brown',
+	price: '$0.70',
+	shape: 'oval pebble',
+	image: 'http://localhost:3000/photos/20180709_213400.png',
+	_id: '74'
+
+}
+
+
+]
+
 
 
 router.get('/beads', (req, res) => {
@@ -702,6 +1008,71 @@ catalog.find({}).exec(function(err, beads) {
 
 res.status(200).json(beads);
 });
+});
+
+
+router.post('/beads', (req, res) => {
+
+let id = Date.now() + Math.random().toString().slice(18);
+
+
+let bead = {
+
+	_id: id,
+	stone: req.body.stone,
+	size: req.body.size,
+	cut: req.body.cut,
+	color: req.body.color,
+	price: req.body.price,
+	shape: req.body.shape
+
+}
+
+catalog.insert(bead, function(err, bead) {
+	res.json(bead);
+});
+});
+
+
+router.get('/beads/:id', (req, res) => {
+
+var beadId = req.params.id;
+
+catalog.findOne({ _id: beadId }, function(err, beadItem) {
+	res.json(beadItem);
+})
+})
+
+router.put('/beads/:id', (req, res) => {
+
+	var beadId = req.params.id;
+
+	let bead = {
+		image: req.body.image,
+		_id: beadId,
+		stone: req.body.stone,
+		size: req.body.size,
+		cut: req.body.cut,
+		color: req.body.color,
+		price: req.body.price,
+		shape: req.body.shape
+	}
+
+	catalog.update({ _id: beadId }, bead, function(err, numReplaced) {
+		if(err) res.send(err);
+
+	res.status(200).json(bead);
+	});
+});
+
+router.delete('/beads/:id', (req, res) => {
+
+	var beadId = req.params.id;
+
+	catalog.remove({ _id: beadId }, {}, function(err, numRemoved) {
+		if(err) res.send(err);
+		res.sendStatus(200);
+	});
 });
 
 
