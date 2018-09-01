@@ -1,4 +1,4 @@
-{"stone":"Smokey Quartz","size":"18 mm","cut":"faceted","color":"gray/clear","price":1,"shape":"oval","image":"http://localhost:3000/photos/20180708_164320.png","_id":1}
+{"stone":"Smokey Quartz","size":"18 mm","cut":"faceted","color":"gray/clear","price":1,"shape":"oval","image":"/static/photos/20180708_164320.png","_id":1}
 {"stone":"Smokey Quartz","size":"4 mm","cut":"smooth","color":"gray/clear","price":0.3,"shape":"teardrop","image":"http://localhost:3000/photos/20180708_164525.png","_id":2}
 {"stone":"Smokey Quartz","size":"10 mm","cut":"smooth","color":"gray/clear","price":0.35,"shape":"tube","image":"http://localhost:3000/photos/20180708_164816.png","_id":3}
 {"stone":"Blue Sandstone","size":"4 mm","cut":"smooth","color":"blue","price":0.15,"shape":"cube","image":"http://localhost:3000/photos/20180708_165551.png","_id":4}
