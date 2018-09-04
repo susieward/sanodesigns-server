@@ -25,7 +25,6 @@ app.use('/', router);
 router.use('/photos', express.static(__dirname + '/photos'));
 
 
-
 router.get('/beads', (req, res) => {
 catalog.find({}).exec(function(err, beads) {
     if (err) res.send(err);
