@@ -212,7 +212,7 @@ router.post('/send', (req, res) => {
       service: 'gmail',
       auth: {
         user: 'susannahirene@gmail.com',
-        pass: 'nosepass43!!'
+        pass: 'almondhymndetoxX57'
       }
 
   });
