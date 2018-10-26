@@ -225,7 +225,7 @@ router.post('/send', (req, res) => {
   let mailOptions = {
     from: req.body.email,
     to: 'Emily Leader <sanodesigns@gmail.com>, Susie Ward <susieward.io@gmail.com>',
-    subject: 'New custom order (via Stripe)',
+    subject: 'New custom order (via Stripe) -- This is a test',
      html: `<p><strong>Customer name:</strong> ${req.body.name.first} ${req.body.name.last}<br>
      <strong>Email:</strong> ${req.body.email}<br>
      <strong>Address:</strong> ${req.body.address.street}<br>
