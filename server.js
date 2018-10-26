@@ -31,11 +31,12 @@ router.use('/photos', express.static(__dirname + '/photos'));
 const users = [
   {
 
-    username: 'eleader',
-    password: 'admin'
+    username: 'sanodesigns',
+    password: 'louise123'
 
   }
 ];
+
 
 router.get('/users', (req, res) => {
 db.users.find({}).exec(function(err, users) {
@@ -45,6 +46,8 @@ res.status(200).json(users);
 });
 });
 
+
+
 router.post('/login', (req, res) => {
 
     var message;
@@ -52,7 +55,7 @@ router.post('/login', (req, res) => {
     var username = req.body.username;
     var password = req.body.password;
 
-    var user = users.filter((user)=> user.username==username)[0];
+    var user = users.filter((user) => user.username == username)[0];
 
       if(!user){
      message = "Incorrect username or nonexistent user."
@@ -211,8 +214,8 @@ router.post('/send', (req, res) => {
     var transport = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'susannahirene@gmail.com',
-        pass: 'almondhymndetoxX57'
+        user: 'sanodesigns@gmail.com',
+        pass: 'louise123'
       }
 
   });
@@ -222,7 +225,7 @@ router.post('/send', (req, res) => {
 
   let mailOptions = {
     from: req.body.email,
-    to: 'Susie Ward <susannahirene@gmail.com>',
+    to: 'Emily Leader <sanodesigns@gmail.com>, Susie Ward <susannahirene@gmail.com>',
     subject: 'New custom order (via Stripe)',
      html: `<p><strong>Customer name:</strong> ${req.body.name.first} ${req.body.name.last}<br>
      <strong>Email:</strong> ${req.body.email}<br>
