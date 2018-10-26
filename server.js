@@ -162,7 +162,6 @@ router.post('/charge', (req, res) => {
     var newCharge = {
         amount: req.body.stripeAmt,
         currency: 'usd',
-        description: 'example',
         source: req.body.stripeToken,
          shipping: {
      		name: req.body.name.first + ' ' + req.body.name.last,
@@ -225,7 +224,7 @@ router.post('/send', (req, res) => {
 
   let mailOptions = {
     from: req.body.email,
-    to: 'Emily Leader <sanodesigns@gmail.com>',
+    to: 'Emily Leader <sanodesigns@gmail.com>, Susie Ward <susieward.io@gmail.com>',
     subject: 'New custom order (via Stripe)',
      html: `<p><strong>Customer name:</strong> ${req.body.name.first} ${req.body.name.last}<br>
      <strong>Email:</strong> ${req.body.email}<br>
