@@ -20,8 +20,8 @@ var catalog = new Datastore({ filename: 'catalog.db', autoload: true });
 db.users = new Datastore({ filename: 'users.db', autoload: true });
 
 app.use(cors());
-app.use(bodyParser.json()); 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({limit: '50mb'})); 
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(express.static('public'));
 
 app.use('/', router);
@@ -35,6 +35,7 @@ const users = [
     password: 'louise123'
 
   }
+
 ];
 
 
@@ -87,34 +88,37 @@ res.status(200).json(beads);
 });
 
 
+
 router.post('/beads', (req, res) => {
  
  let name = req.body.stone;
  let number = Date.now() + Math.random().toString().slice(18);
 
-let _id = number;
+let id = 'b' + number;
+
 
 let bead = {
 
-	_id: _id,
+	_id: id,
 	stone: req.body.stone,
 	size: req.body.size,
 	cut: req.body.cut,
 	color: req.body.color,
 	price: req.body.price,
-	shape: req.body.shape,
-	image: req.body.image
+	shape: req.body.shape
 
 }
 
 catalog.insert(bead, function(err, bead) {
-	res.json(bead);
+  if(err) res.send(err);
+	res.status(200).json(bead);
 });
 });
 
 
 router.get('/beads/:id', (req, res) => {
 
+var beadItem;
 var beadId = req.params.id;
 
 catalog.findOne({ _id: beadId }, function(err, beadItem) {
@@ -224,7 +228,8 @@ router.post('/send', (req, res) => {
 
   let mailOptions = {
     from: req.body.email,
-    to: 'Emily Leader <sanodesigns@gmail.com>, Susie Ward <susieward.io@gmail.com>',
+    to: 'Emily Leader <sanodesigns@gmail.com>',
+    cc: 'susieward.io@gmail.com',
     subject: 'New custom order (via Stripe) -- This is a test',
      html: `<p><strong>Customer name:</strong> ${req.body.name.first} ${req.body.name.last}<br>
      <strong>Email:</strong> ${req.body.email}<br>
