@@ -72,4 +72,3 @@
 {"stone":"Garnet","size":6,"cut":"smooth","color":"red/purple","price":0.4,"shape":"flat diamonds","image":"/static/photos/20180709_212744.png","_id":"a72"}
 {"stone":"Clear Quartz","size":8,"cut":"smooth","color":"clear","price":0.35,"shape":"triangle","image":"/static/photos/20180709_212913.png","_id":"a73"}
 {"stone":"Agate","size":16,"cut":"smooth","color":"gray/white/brown","price":0.7,"shape":"oval pebble","image":"/static/photos/20180709_213400.png","_id":"a74"}
-{"_id":"b1540705332606","stone":"Example","size":"05","cut":"dfasdf","color":"dfasdf","price":"0.17","shape":"sdfsdfaf"}
