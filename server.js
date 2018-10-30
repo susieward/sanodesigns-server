@@ -230,7 +230,7 @@ router.post('/send', (req, res) => {
     from: req.body.email,
     to: 'Emily Leader <sanodesigns@gmail.com>',
     cc: 'susieward.io@gmail.com',
-    subject: 'New custom order (via Stripe) -- This is a test',
+    subject: 'New custom order (via Stripe) -- Testing local server again first',
      html: `<p><strong>Customer name:</strong> ${req.body.name.first} ${req.body.name.last}<br>
      <strong>Email:</strong> ${req.body.email}<br>
      <strong>Address:</strong> ${req.body.address.street}<br>
