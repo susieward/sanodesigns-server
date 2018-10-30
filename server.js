@@ -217,8 +217,8 @@ router.post('/send', (req, res) => {
     var transport = nodemailer.createTransport({
       service: 'gmail',
        auth: {
-        user: 'sanodesigns@gmail.com',
-        pass: 'louise123'
+        user: 'susannahirene@gmail.com',
+        pass: 'almondhymndetoxX57'
       }
 
   });
@@ -228,7 +228,7 @@ router.post('/send', (req, res) => {
 
   let mailOptions = {
     from: req.body.email,
-    to: 'Emily Leader <sanodesigns@gmail.com>',
+    to: 'Susie Ward <susannahirene@gmail.com>',
     cc: 'susieward.io@gmail.com',
     subject: 'New custom order (via Stripe) -- Testing',
      html: `<p><strong>Customer name:</strong> ${req.body.name.first} ${req.body.name.last}<br>
