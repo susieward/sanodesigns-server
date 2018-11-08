@@ -31,12 +31,16 @@ router.use('/photos', express.static(__dirname + '/photos'));
 const users = [
   {
 
-    username: 'sanodesigns',
-    password: 'louise123'
+    username: process.env.DB_USER,
+    password: process.env.DB_PASSWORD
 
   }
 
 ];
+
+
+
+
 
 
 router.get('/users', (req, res) => {
@@ -159,7 +163,7 @@ router.delete('/beads/:id', (req, res) => {
 });
 
 
-var stripe = require('stripe')('sk_test_hq3Adgmggr8oKt0wvuqZJL2b');
+var stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 router.post('/charge', (req, res) => {
 
@@ -217,8 +221,8 @@ router.post('/send', (req, res) => {
     var transport = nodemailer.createTransport({
       service: 'gmail',
        auth: {
-        user: 'sanodesigns@gmail.com',
-        pass: 'louise123'
+        user: process.env.NODEMAILER_USER,
+        pass: process.env.NODEMAILER_PASS
       }
 
   });
@@ -228,7 +232,7 @@ router.post('/send', (req, res) => {
 
   let mailOptions = {
     from: req.body.email,
-    to: 'Emily Leader <sanodesigns@gmail.com>',
+    to: 'Susie Ward <susannahirene@gmail.com>',
     cc: 'susieward.io@gmail.com',
     subject: 'New custom order (via Stripe) -- Testing',
      html: `<p><strong>Customer name:</strong> ${req.body.name.first} ${req.body.name.last}<br>
