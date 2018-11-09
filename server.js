@@ -40,9 +40,6 @@ const users = [
 
 
 
-
-
-
 router.get('/users', (req, res) => {
 db.users.find({}).exec(function(err, users) {
     if (err) res.send(err);
