@@ -4,7 +4,7 @@ const express = require('express');
        app = express();
       cors = require('cors');
 
-var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+var env = process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 var port = process.env.PORT || 3000;
 var router = express.Router();
 
@@ -230,8 +230,7 @@ router.post('/send', (req, res) => {
   let mailOptions = {
     from: req.body.email,
     to: 'Susie Ward <susannahirene@gmail.com>',
-    cc: 'susieward.io@gmail.com',
-    subject: 'New custom order (via Stripe) -- Testing',
+    subject: 'New custom order (via Stripe)',
      html: `<p><strong>Customer name:</strong> ${req.body.name.first} ${req.body.name.last}<br>
      <strong>Email:</strong> ${req.body.email}<br>
      <strong>Address:</strong> ${req.body.address.street}<br>
