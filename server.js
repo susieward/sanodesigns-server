@@ -4,7 +4,7 @@ const express = require('express');
        app = express();
       cors = require('cors');
 
-var env = process.env.NODE_ENV = process.env.NODE_ENV || 'production';
+var env = process.env.NODE_ENV;
 var port = process.env.PORT || 3000;
 var router = express.Router();
 
