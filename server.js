@@ -135,15 +135,19 @@ router.put('/beads/:id', (req, res) => {
 
 	var beadId = req.params.id;
 
+  let beadSize = Number(req.body.size);
+let beadPrice = Number(req.body.price);
+
 	let bead = {
 		image: req.body.image,
 		_id: beadId,
 		stone: req.body.stone,
-		size: req.body.size,
+		size: beadSize,
 		cut: req.body.cut,
 		color: req.body.color,
-		price: req.body.price,
-		shape: req.body.shape
+		price: beadPrice,
+		shape: req.body.shape,
+    image: req.body.image
 	}
 
 	catalog.update({ _id: beadId }, bead, function(err, numReplaced) {
