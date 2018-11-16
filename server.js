@@ -33,7 +33,7 @@ router.use('/photos', express.static(__dirname + '/photos'));
 var db;
 
 // Connect to the database before starting the application server.
-mongodb.MongoClient.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/sanodb', 
+mongodb.MongoClient.connect(process.env.MONGODB_URI, 
 	{ useNewUrlParser: true }, function (err, client) {
   if (err) { 
     console.log(err);
