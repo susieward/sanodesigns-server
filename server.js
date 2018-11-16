@@ -4,6 +4,11 @@ const express = require('express');
        app = express();
       cors = require('cors');
 
+var mongodb = require('mongodb');
+var ObjectID = mongodb.ObjectID;
+
+var BEADS_COLLECTION = 'beads';
+
 var env = process.env.NODE_ENV;
 var port = process.env.PORT || 3000;
 var router = express.Router();
@@ -14,10 +19,6 @@ var fs = require('file-system');
 const nodemailer = require('nodemailer');
 var inlineBase64 = require('nodemailer-plugin-inline-base64');
 
-var Datastore = require('nedb');
-var db = {};
-var catalog = new Datastore({ filename: 'catalog.db', autoload: true });
-db.users = new Datastore({ filename: 'users.db', autoload: true });
 
 app.use(cors());
 app.use(bodyParser.json({limit: '50mb'})); 
@@ -27,6 +28,34 @@ app.use(express.static('public'));
 app.use('/', router);
 
 router.use('/photos', express.static(__dirname + '/photos'));
+
+
+var db;
+
+// Connect to the database before starting the application server.
+mongodb.MongoClient.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/sanodb', 
+	{ useNewUrlParser: true }, function (err, client) {
+  if (err) { 
+    console.log(err);
+    process.exit(1);
+  }
+
+
+
+  // Save database object from the callback for reuse.
+  db = client.db();
+  console.log("Database connection ready");
+
+app.listen(port, function(){
+  console.log('Server listening on port ' + port)
+});
+});
+
+
+function handleError(res, reason, message, code) {
+  console.log("ERROR: " + reason);
+  res.status(code || 500).json({"error": message});
+}
 
 const users = [
   {
@@ -38,15 +67,6 @@ const users = [
 
 ];
 
-
-
-router.get('/users', (req, res) => {
-db.users.find({}).exec(function(err, users) {
-    if (err) res.send(err);
-
-res.status(200).json(users);
-});
-});
 
 
 
@@ -80,19 +100,21 @@ router.post('/login', (req, res) => {
     });
 
 
-router.get('/beads', (req, res) => {
-catalog.find({}).exec(function(err, beads) {
-    if (err) res.send(err);
 
-res.status(200).json(beads);
+router.get('/beads', function(req, res) {
+  db.collection(BEADS_COLLECTION).find({}).toArray(function(err, docs) {
+    if (err) {
+      handleError(res, err.message, "Failed to get beads.");
+    } else {
+      res.status(200).json(docs);
+    }
+  });
 });
-});
 
 
 
-router.post('/beads', (req, res) => {
- 
- let name = req.body.stone;
+router.post('/beads', function(req, res) {
+   let name = req.body.stone;
  let number = Date.now() + Math.random().toString().slice(18);
 
 let id = 'b' + number;
@@ -114,31 +136,39 @@ let bead = {
 
 }
 
-catalog.insert(bead, function(err, bead) {
-  if(err) res.send(err);
-	res.status(200).json(bead);
+
+    db.collection(BEADS_COLLECTION).insertOne(bead, function(err, doc) {
+      if (err) {
+        handleError(res, err.message, "Failed to create new bead.");
+      } else {
+        res.status(201).json(doc.ops[0]);
+      }
+    });
+  });
+
+
+
+
+router.get('/beads/:id', function(req, res) {
+  db.collection(BEADS_COLLECTION).findOne({ _id: req.params.id }, function(err, doc) {
+    if (err) {
+      handleError(res, err.message, "Failed to get bead");
+    } else {
+      res.status(200).json(doc);
+    }
+  });
 });
-});
 
 
-router.get('/beads/:id', (req, res) => {
+router.put('/beads/:id', function(req, res) {
 
-var beadItem;
-var beadId = req.params.id;
-
-catalog.findOne({ _id: beadId }, function(err, beadItem) {
-	res.json(beadItem);
-})
-})
-
-router.put('/beads/:id', (req, res) => {
-
-	var beadId = req.params.id;
+		var beadId = req.params.id;
 
   let beadSize = Number(req.body.size);
 let beadPrice = Number(req.body.price);
 
 	let bead = {
+		$set: {
 		image: req.body.image,
 		_id: beadId,
 		stone: req.body.stone,
@@ -146,25 +176,31 @@ let beadPrice = Number(req.body.price);
 		cut: req.body.cut,
 		color: req.body.color,
 		price: beadPrice,
-		shape: req.body.shape,
-    image: req.body.image
+		shape: req.body.shape
+	}
 	}
 
-	catalog.update({ _id: beadId }, bead, function(err, numReplaced) {
-		if(err) res.send(err);
+  var updateDoc = req.body;
 
-	res.status(200).json(bead);
-	});
+  db.collection(BEADS_COLLECTION).updateOne({_id: req.params.id }, bead, function(err, doc) {
+    if (err) {
+      handleError(res, err.message, "Failed to update bead");
+    } else {
+      res.status(200).json(bead);
+    }
+  });
 });
 
-router.delete('/beads/:id', (req, res) => {
 
-	var beadId = req.params.id;
 
-	catalog.remove({ _id: beadId }, {}, function(err, numRemoved) {
-		if(err) res.send(err);
-		res.sendStatus(200);
-	});
+router.delete('/beads/:id', function(req, res) {
+  db.collection(BEADS_COLLECTION).deleteOne({_id: req.params.id }, function(err, result) {
+    if (err) {
+      handleError(res, err.message, "Failed to delete bead");
+    } else {
+      res.status(200).json(req.params.id);
+    }
+  });
 });
 
 
@@ -285,7 +321,3 @@ router.post('/send', (req, res) => {
 });
 
 
-
-app.listen(port, function(){
-  console.log('Server listening on port ' + port)
-});
