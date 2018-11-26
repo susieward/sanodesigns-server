@@ -32,7 +32,6 @@ router.use('/photos', express.static(__dirname + '/photos'));
 
 var db;
 
-// Connect to the database before starting the application server.
 mongodb.MongoClient.connect('mongodb://heroku_v1zt1043:sff1m77dj0jp12bin9pqaghmqc@ds263493.mlab.com:63493/heroku_v1zt1043', 
 	{ useNewUrlParser: true }, function (err, client) {
   if (err) { 
@@ -40,7 +39,6 @@ mongodb.MongoClient.connect('mongodb://heroku_v1zt1043:sff1m77dj0jp12bin9pqaghmq
     process.exit(1);
   }
 
-  // Save database object from the callback for reuse.
   db = client.db();
   console.log("Database connection ready");
 
